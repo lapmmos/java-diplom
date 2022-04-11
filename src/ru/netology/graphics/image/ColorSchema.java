@@ -1,6 +1,10 @@
 package ru.netology.graphics.image;
 
 public class ColorSchema implements TextColorSchema {
+    final int maxBright = 256;
+    final char[] chars = new char[]{'#', '$', '@', '%', '*', '+', '-', '\''};
+    final int preIndex = maxBright / chars.length;
+
     @Override
     public char convert(int color) {
 //        if (color >= 0 && color < 30) {
@@ -20,9 +24,9 @@ public class ColorSchema implements TextColorSchema {
 //        } else {
 //            return ' ';
 //        }
-        int maxBright = 256;
-        char[] chars = new char[]{'#', '$', '@', '%', '*', '+', '-', '\''};
-        int preIndex = maxBright / chars.length;
+//        int maxBright = 256;
+//        char[] chars = new char[]{'#', '$', '@', '%', '*', '+', '-', '\''};
+//        int preIndex = maxBright / chars.length;
         return chars[color/preIndex];
     }
 }
